@@ -1,0 +1,65 @@
+/**
+ * Copyright (c) 2016 ろくろう
+ *
+ * This software is released under the MIT License.
+ *  http://opensource.org/licenses/mit-license.php
+ */
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Project Paintball Display';
+    src: url('project_paintball.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'イカモドキ';
+    src: url('ikamodoki1_0.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, button {
+	font-family:'Project Paintball Display', "イカモドキ";
+}
+
+#udemap {
+	color:  whitesmoke;
+}
+
+#udemap td:nth-child(1) {
+    text-align: center;
+}
+
+#udemap td:nth-child(2) {
+    min-width: 3em;
+    text-align: right;
+}
+
+input {
+    width: 4em;
+    text-align: right;
+}
+
+#stdin {
+    display: none;
+}
+
+.me {
+	color:  orange;
+}
+
+.S\+, .S {
+    background-color:rgba(200, 50, 200, 1);
+}
+.A\+, .A, .A- {
+    background-color:rgba(0, 0, 200, 1);;
+}
+.B\+, .B, .B- {
+    background-color:rgba(0, 200, 0, 1);;
+}
+.C\+, .C, .C- {
+    background-color:rgba(200, 200, 0, 1);;
+}
+

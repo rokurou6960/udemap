@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+ * Copyright (c) 2016 ろくろう
+ *
+ * This software is released under the MIT License.
+ *  http://opensource.org/licenses/mit-license.php
+-->
+<html>
+<head>
+<!-- IE8+に対して「IE=edge」と指定することで、利用できる最も互換性の高い最新のエンジンを使用するよう指示できます
+     参考: https://w...content-available-to-author-only...n.ie/en-us/performance/how-to-use-x-ua-compatible -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+<!-- ページのタイトルを記述 -->
+<title>ウデマップ</title>
+ 
+<!-- パフォーマンスのために使用する文字のエンコーディングを記述
+     参考: https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly -->
+<meta charset="utf-8">
+ 
+<!-- content属性にページの紹介文を記述 -->
+<meta name="description" content="">
+ 
+<!-- content属性にページの著者情報を記述 -->
+<meta name="author" content="ろくろう">
+ 
+<!-- モバイル端末への対応、ページをビューポートの幅に合わせてレンダリング（Android, iOS6以降）
+     ズームを許可しない設定「user-scalable=no」は加えない -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+<!-- スタイルシートはできるだけ早くレンダリングされるため、HTMLドキュメントの上の方に記述
+     href属性にスタイルシートファイルのURIを記述 -->
+<link rel="stylesheet" href="udemap.css">
+ 
+<!-- IE8以下用に2つのスクリプトを記述
+     html5shiv.js: IE8以下にHTML5の要素を認識するようにさせる
+     respond.js: IE8以下にMedia Queriesの代替え機能を提供 -->
+<!--&#91;if lt IE 9&#93;>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<!&#91;endif&#93;-->
+ 
+<!-- href属性にファビコンファイルのURIを記述 -->
+<link rel="shortcut icon" href="">
+ 
+<!-- コメントアウトしてあるコードは、iOS/Android用のアイコン指定 -->
+<!--
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="196x196" href="">
+<link rel="apple-touch-icon" sizes="152x152" href="">
+-->
+ 
+<!-- スクリプトでブロッキングを起こさないものはここに記述
+     可能であれば「async（文書の読み込みが完了した時点でスクリプトを実行）」を使用
+     Example: <script src="" async></script> -->
+</head>
+<body>
+ 
+<!-- コンテンツを記述 -->
+<table>
+ <tr>
+  <td> 
+    <table id="udemap">
+        <tr class="S+"><td>S+99</td><td id="S+99">0</td></tr>
+        <tr class="S+"><td>S+50</td><td id="S+50">0</td></tr>
+        <tr class="S+"><td>S+</td><td id="S+">0</td></tr>
+        <tr class="S"><td>S50</td><td id="S50">0</td></tr>
+        <tr class="S"><td>S</td><td id="S">0</td></tr>
+        <tr class="A+"><td>A+50</td><td id="A+50">0</td></tr>
+        <tr class="A+"><td>A+</td><td id="A+">0</td></tr>
+        <tr class="A"><td>A50</td><td id="A50">0</td></tr>
+        <tr class="A"><td>A</td><td id="A">0</td></tr>
+        <tr class="A-"><td>A-50</td><td id="A-50">0</td></tr>
+        <tr class="A-"><td>A-</td><td id="A-">0</td></tr>
+        <tr class="B+"><td>B+50</td><td id="B+50">0</td></tr>
+        <tr class="B+"><td>B+</td><td id="B+">0</td></tr>
+        <tr class="B"><td>B50</td><td id="B50">0</td></tr>
+        <tr class="B"><td>B</td><td id="B">0</td></tr>
+        <tr class="B-"><td>B-</td><td id="B-">0</td></tr>
+        <tr class="C+"><td>C+</td><td id="C+">0</td></tr>
+        <tr class="C"><td>C</td><td id="C">0</td></tr>
+        <tr class="C-"><td>C-</td><td id="C-">0</td></tr>
+    </table>
+  </td>
+  <td>
+   <form>
+    <table id="input">
+<!--        <tr><td>ランク</td><td>50</td></tr> -->
+        <tr><td>プレイ回数</td><td id="count">0</td></tr>
+        <tr><th colspan="2">プレイヤー分布</th></tr>
+        <tr class="distr"><td><input class="pow" type="number" value="1"/></td><td><input class="num" type="number" value="1"/></td></tr>
+        <tr class="distr"><td><input class="pow" type="number" value="2"/></td><td><input class="num" type="number" value="21"/></td></tr>
+        <tr class="distr"><td><input class="pow" type="number" value="3"/></td><td><input class="num" type="number" value="136"/></td></tr>
+        <tr class="distr"><td><input class="pow" type="number" value="4"/></td><td><input class="num" type="number" value="341"/></td></tr>
+        <tr class="distr"><td><input class="pow" type="number" value="5"/></td><td><input class="num" type="number" value="341"/></td></tr>
+        <tr class="distr"><td><input class="pow" type="number" value="6"/></td><td><input class="num" type="number" value="136"/></td></tr>
+        <tr class="distr"><td><input class="pow" type="number" value="7"/></td><td><input class="num" type="number" value="21"/></td></tr>
+        <tr class="distr"><td><input class="pow" type="number" value="8"/></td><td><input class="num" type="number" value="1"/></td></tr>
+        <tr class="distr"><td><input class="pow" type="number" value=""/></td><td><input class="num" type="number" value=""/></td></tr>
+        <tr class="distr"><td><input class="pow" type="number" value=""/></td><td><input class="num" type="number" value=""/></td></tr>
+        <tr class="distr"><td><input class="pow" type="number" value=""/></td><td><input class="num" type="number" value=""/></td></tr>
+        <tr><th>強さ</th><th>人数</th></tr>
+        <tr class="me"><td><input class="pow" type="number" value="4"/></td><td><button type="button" id="start" onclick="buttonClick()">でPLAY</button></td></tr>
+    </table>
+   </form>
+  </td>
+ </tt>
+</table> 
+    <textarea id="stdin">[[4,1],[1,1],[2,21],[3,136],[4,341],[5,341],[6,136],[7,21],[8,1]]</textarea>
+<!-- スクリプトでブロッキングを起こすものはここに記述
+ブロッキングを起こす原因としては、CSSのセレクタ操作（IE）、負荷の高いDOM操作、多数のスクリプトなど -->
+<!-- SCRIPTS -->
+<!-- 例: <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script src="udemap.js"></script>
+</body>
+</html>
